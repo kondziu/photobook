@@ -1,14 +1,119 @@
-\documentclass[a4paper,landscape]{memoir}
+\documentclass[a4paper,landscape,twoside]{memoir}
 \usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage{afterpage}
 
-\usepackage[a4paper, landscape, total={8in, 6in}]{geometry}
+\usepackage[a4paper, landscape, total={8in, 6in}, bindingoffset=30mm]{geometry}
+
+\pagenumbering{gobble}
+\pagestyle{empty}
 
 \begin{document}
 
-\includegraphics[height=15cm]{photos/ants_and_aphids}
+\title{Big book of ant and scary plant}
+\author{Colette Kerr and Konrad Siek}
+\date{December 2021}
 
-\clearpage
+\newlength{\verticalheight}
+\verticalheight=.97\textheight
 
-\includegraphics[height=15cm]{photos/aloe_closeup}
+\newlength{\landscapeheight}
+\landscapeheight=.9\textheight
+
+\newcommand{\blankpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+\newenvironment{rightbox}[1]
+ {\itemize[
+    nosep,
+    leftmargin=\dimexpr\textwidth-#1\relax,
+    rightmargin=0pt,
+    itemindent=\parindent,
+    listparindent=\parindent,
+  ]\item[]\relax}
+ {\enditemize}
+
+\newcommand{\descriptioncolor}{white}
+\pagecolor{black}
+
+{\color{\descriptioncolor}
+\maketitle
+}
+
+%\begin{sidewaysfigure}
+%\caption{Henlo}
+%\end{sidewaysfigure}
+
+\pagebreak
+\null\newpage
+
+\noindent
+\begin{minipage}[t]{.5\linewidth}{\color{\descriptioncolor}
+    \includegraphics[height=\verticalheight]{photos/ants_and_aphids}
+}\end{minipage}
+\begin{minipage}[t][\verticalheight]{.4\linewidth}
+\vfill
+\begin{minipage}[b][.5\verticalheight]{\linewidth}{\color{\descriptioncolor}
+    \textbf{Aphid farm} \\
+    Prague, June 2021 \\
+    Konrad Siek
+}\end{minipage}
+\begin{minipage}[b][.5\verticalheight]{\linewidth}{\color{\descriptioncolor}
+    \textbf{Hodowla mszyc} \\
+    Praga, Czerwiec 2021 \\
+    Konrad Siek
+}\end{minipage} 
+\end{minipage}
+\hfill
+
+\pagebreak
+
+\noindent
+\begin{minipage}{.98\linewidth}
+\includegraphics[height=\landscapeheight]{photos/aloe_closeup}
+\end{minipage}
+\\[\baselineskip]
+\begin{minipage}[t]{\linewidth}
+\begin{minipage}[t]{.4\linewidth}{\color{\descriptioncolor}
+    \textbf{Aloe} \\
+    Prague, July 2021 \\
+    Konrad Siek
+}\end{minipage}
+\hfill
+%\begin{rightbox}
+\begin{minipage}[t]{.4\linewidth}{\color{\descriptioncolor}
+    \textbf{Aloes} \\
+    Praga, Lipiec 2021 \\
+    Konrad Siek
+}\end{minipage}
+%\end{rightbox}
+\end{minipage}
+
+\pagebreak
+
+\noindent
+\begin{minipage}{.98\linewidth}
+\includegraphics[height=\landscapeheight]{photos/the_death_of_a_bug.jpg}
+\end{minipage}
+\\[\baselineskip]
+\begin{minipage}[t]{\linewidth}
+\begin{minipage}[t]{.4\linewidth}{\color{\descriptioncolor}
+    \textbf{The death of a bug} \\
+    Prague, July 2021 \\
+    Konrad Siek
+}\end{minipage}
+\hfill
+%\begin{rightbox}
+\begin{minipage}[t]{.4\linewidth}{\color{\descriptioncolor}
+    \textbf{Smierć robaka} \\
+    Praga, Lipiec 2021 \\
+    Konrad Siek
+}\end{minipage}
+%\end{rightbox}
+\end{minipage}
 
 \end{document}
