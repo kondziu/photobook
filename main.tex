@@ -5,6 +5,10 @@
 \usepackage{afterpage}
 \usepackage{boolexpr}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
 \usepackage[a4paper, landscape, total={8in, 6in}, bindingoffset=30mm]{geometry}
 
 \pagenumbering{gobble}
@@ -12,7 +16,7 @@
 
 \begin{document}
 
-\title{Big book of ant and scary plant}
+\title{Big book of bird, bug, and building}
 \author{Colette Kerr and Konrad Siek}
 \date{December 2021}
 
@@ -40,18 +44,18 @@
 % usage: 
 %   \landscape{file}{description in english}{description in polish}
 %   \portrait{file}{description in english}{description in polish}
-\newcommand{\portrait}[3]{%
-\noindent
-\begin{minipage}[t]{.5\linewidth}{\color{\descriptioncolor}
-    \includegraphics[height=\verticalheight]{#1}
+\newcommand{\portrait}[4][.5]{%
+\noindent 
+\begin{minipage}[t]{#1\linewidth}{\color{\descriptioncolor}
+    \includegraphics[height=\verticalheight]{#2}
 }\end{minipage}
 \begin{minipage}[t][\verticalheight]{.4\linewidth}
 \vfill
 \begin{minipage}[b][.5\verticalheight]{\linewidth}{\color{\descriptioncolor}
-#2
+#3
 }\end{minipage}
 \begin{minipage}[b][.5\verticalheight]{\linewidth}{\color{\descriptioncolor}
-#3
+#4
 }\end{minipage} 
 \end{minipage}
 \hfill
@@ -78,7 +82,7 @@
 \pagebreak
 }
 
-\newcommand{\collection}[2]{{\color{white}\chapter*{#1\\\vspace{\baselineskip}#2}}}
+\newcommand{\collection}[2]{\null\newpage{\color{white}\chapter*{#1\\\vspace{\baselineskip}#2}}}
 
 % usage: 
 %    \description{title of picture}{location, date}{author}
@@ -93,50 +97,157 @@
 %\end{sidewaysfigure}
 
 \pagebreak
-\null\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\collection{Prague}{Praga}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\landscape{photos/prague}{
-    \description{The castle}{Prague, July 2021}{Konrad Siek}
-}{
-    \description{Zamek}{Praga, lipiec 2021}{Konrad Siek}
-}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \collection{Alien worlds}{Obce światy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\portrait{photos/ants_and_aphids}{
+\portrait{photos/alien_worlds/ants_and_aphids}{
     \description{Aphid farm}{Prague, June 2021}{Konrad Siek}
 }{
     \description{Hodowla mszyc}{Praga, czerwiec 2021}{Konrad Siek}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\landscape{photos/aloe_closeup}{
+\landscape{photos/alien_worlds/aloe_closeup}{
     \description{Aloe}{Prague, July 2021}{Konrad Siek}
 } {
     \description{Aloes}{Praga, lipiec 2021}{Konrad Siek}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\landscape{photos/the_death_of_a_bug}{
+\landscape{photos/alien_worlds/the_death_of_a_bug}{
     \description{The death of a bug}{Prague, July 2021}{Konrad Siek}
 } {
     \description{Śmierć robaka}{Praga, lipiec 2021}{Konrad Siek}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\portrait{photos/spindly_plant}{
+\portrait{photos/alien_worlds/spindly_plant}{
     \description{Spindly plant}{Prague, October 2021}{Konrad Siek}
 } {
     \description{Włochata roślina}{Praga, październik 2021}{Konrad Siek}
 }
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\collection{Prague}{Praga}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\portrait{photos/prague/petrin_and_fog}{
+    \description{Petřín tower in the fog}{Prague, August 2021}{Konrad Siek}
+}{
+    \description{Wieża Petřín we mgle}{Praga, sierpnień 2021}{Konrad Siek}
+}
+
+\portrait{photos/prague/petrin_and_rainbows}{
+    \description{Petřín tower with a rainbow}{Prague, August 2021}{Konrad Siek}
+}{
+    \description{Wieża Petřín z teńczą}{Praga, sierpnień 2021}{Konrad Siek}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\landscape{photos/prague/zizkov_sunset}{
+    \description{Žižkov television tower at sunset}{Prague, November 2021}{Konrad Siek}
+}{
+    \description{Wieża telewizyjna Žižkov o zachodzie słońca}{Praga, listopad 2021}{Konrad Siek}
+}
+
+
+\landscape{photos/prague/other_side_of_the_river}{
+    \description{Holešovice from the other side fo the river}{Prague, September 2021}{Konrad Siek}
+}{
+    \description{Holešovice od drugiej strony rzeki}{Praga, wrzesień 2021}{Konrad Siek}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\collection{By night}{Nocą}
+
+\landscape{photos/night/castle_by_night}{
+    \description{The castle by night}{Prague, July 2021}{Konrad Siek}
+}{
+    \description{Zamek nocą}{Praga, lipiec 2021}{Konrad Siek}
+}
+
+\landscape{photos/night/bubenec_by_night}{
+    \description{Bubeneč quarter by night}{Prague, December 2021}{Konrad Siek}
+}{
+    \description{Dzielnica Bubeneč nocą}{Praga, grudzień 2021}{Konrad Siek}
+}
+
+\landscape{photos/night/grass_by_night}{
+    \description{Far from the city at night}{Prague, May 2021}{Konrad Siek}
+}{
+    \description{Z daleka od miasta nocą}{Praga, maj 2021}{Konrad Siek}
+}
+
+\portrait{photos/night/moon}{
+    \description{The moon}{Prague, May 2021}{Konrad Siek}
+}{
+    \description{Księżyc}{Praga, maj 2021}{Konrad Siek}
+}
+
+\portrait[.55]{photos/night/self-portait}{
+    \description{Self-portrait with a window}{Prague, May 2021}{Konrad Siek}
+}{
+    \description{Autoportret z oknem}{Praga, maj 2021}{Konrad Siek}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\collection{Backyard ornithology}{Podwórkowa ornitologia}
+
+\portrait[.55]{photos/birbs/gremlin}{
+    \description{Gremlin spotted in the backyard\\(European green woodpecker)}{Prague, October 2021}{Konrad Siek}
+}{
+    \description{Gremlin spostrzeżony na podwórku\\(Dzięcioł zielony)}{Praga, październik 2021}{Konrad Siek}
+}
+
+\portrait[.55]{photos/birbs/redstart_impersonating_a_potato}{
+    \description{Flying potato\\(Redstart)}{Prague, July 2021}{Konrad Siek}
+}{
+    \description{Fruwający ziemniak\\(Pleszka)}{Praga, lipiec 2021}{Konrad Siek}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\portrait[.55]{photos/birbs/kestrel}{
+    \description{On a branch\\(Kestrel, male)}{Prague, November 2021}{Konrad Siek}
+}{
+    \description{Na gałęzi\\(Pustułka, samiec)}{Praga, listopad 2021}{Konrad Siek}
+}
+
+\portrait[.55]{photos/birbs/kestrel_on_a_wire}{
+    \description{On a wire\\(Kestrel, female)}{Prague, July 2021}{Konrad Siek}
+}{
+    \description{Na drucie\\(Pustułka, samica)}{Praga, lipiec 2021}{Konrad Siek}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\landscape{photos/birbs/pidg}{
+    \description{Pigeon}{Prague, April 2021}{Konrad Siek}
+}{
+    \description{Gołąb}{Praga, kwiecień 2021}{Konrad Siek}
+}
+
+\landscape{photos/birbs/pidgeons_in_flight}{
+    \description{A flock of pigeons in flight}{Prague, July 2021}{Konrad Siek}
+}{
+    \description{Gromada gołębi w locie}{Praga, lipiec 2021}{Konrad Siek}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\landscape{photos/birbs/buzzard_and_the_crows}{
+    \description{A buzzard mobbed by crows}{Prague, October 2021}{Konrad Siek}
+}{
+    \description{Myszołów nękany przez kruki}{Praga, październik 2021}{Konrad Siek}
+}
 
 
 
